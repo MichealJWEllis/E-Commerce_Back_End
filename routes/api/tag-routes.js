@@ -30,10 +30,16 @@ router.get('/:id', (req, res) => {
       attributes: ['product_name', 'price', 'stock', 'category_id']
     }
   })
-    .then(tagData => res.json(tagData))
-    .catch(e => {
-      res.status(500).json(e)
-    })
+  .then(tagData => {
+    if (!tagData) {
+      res.status(404).json({ message: 'Tag association not found' })
+      return 
+    }
+    res.json(tagData)
+  })
+  .catch(e => {
+    res.status(500).json(e)
+  })
 
 });
 
@@ -50,10 +56,10 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update({
+  Tag.update(req.body, {
     where: {
       id: req.params.id
-    }
+    },
   })
     .then(tagData => {
       if (!tagData) {
