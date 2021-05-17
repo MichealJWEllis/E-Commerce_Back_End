@@ -22,6 +22,10 @@
 
 - [Contributed](#contributed)
 
+- [Install](#install)
+
+- [Usage](#usage)
+
 - [Tests](#tests)
 
 - [Questions](#questions)
@@ -64,6 +68,40 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS (Unlicense) PUBLIC 
 ## Contributed:
 
 All code was created by myself.
+
+---
+
+## Installation:
+💾   
+  
+`npm init`
+
+`npm install express`
+
+`npm install mysql2`
+
+`npm install sequelize`
+
+`npm install dotenv`
+
+---
+  
+## Usage:
+💻   
+  
+Run the following command at the root of your project and answer the prompted questions:
+
+`mysql -u root -p`
+
+Enter PW when promted
+
+`source db/schema.sql`
+
+`quit`
+
+`npm run seed`
+  
+`npm start`
 
 ---
 
